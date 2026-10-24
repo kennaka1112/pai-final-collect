@@ -1,0 +1,10 @@
+#!/bin/bash
+# rosbag2 -> LeRobotDataset 変換（集めるタスク）
+#   pai_training 側は configs/conversion_config.yaml を固定で読むため、
+#   本課題用の設定をその名前で配置してから実行する。
+set -e
+CFG=/workspace/pai_collect/configs
+cp "$CFG/collect_features.py" ~/pai_training/configs/collect_features.py
+cp "$CFG/collect_conversion.yaml" ~/pai_training/configs/conversion_config.yaml
+cd ~/pai_training
+yes y | pixi run convert "$@"

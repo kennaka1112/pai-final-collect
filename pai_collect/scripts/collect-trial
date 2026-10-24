@@ -1,0 +1,43 @@
+#!/bin/bash
+# 学習済み方策で1試行（2個を集める一連の動作）だけ実行し、成否を判定する。
+#   使い方: collect-trial [制御秒数=22] [試行回数=1]
+#   各試行の前にアームを直立へ戻し、ブロックを開始位置へ戻して条件をそろえる。
+#   モデルの読み込みに時間がかかるため、方策が実際に指令を出し始めてから計測する。
+source /opt/ros/humble/setup.bash
+source ~/airobot_ws/install/setup.bash
+export DISPLAY=:0
+SEC="${1:-22}"
+N="${2:-1}"
+HERE="$(cd "$(dirname "$0")" && pwd)"
+OK=0
+for i in $(seq 1 "$N"); do
+  pkill -f "scripts/infer.py" >/dev/null 2>&1 || true
+  sleep 1
+  python3 "$HERE/goto_upright.py" 4
+  bash "$HERE/reset_blocks.sh"
+  python3 "$HERE/goto_upright.py" 2
+
+  : > /tmp/infer.log
+  nohup bash "$HERE/collect-infer" > /tmp/infer.log 2>&1 &
+  for _ in $(seq 1 180); do
+    grep -q '^action:' /tmp/infer.log && break
+    sleep 0.5
+  done
+  sleep "$SEC"
+  pkill -f "scripts/infer.py" >/dev/null 2>&1 || true
+  sleep 2
+
+  XY=$(bash "$HERE/blocks_pose.sh")
+  RES=$(python3 -c "
+import sys
+rx, ry, bx, by = [float(t) for t in sys.argv[1].split()]
+def ing(x, y):
+    return abs(x - 0.1372) <= 0.0375 and abs(y) <= 0.0675
+hr, hb = ing(rx, ry), ing(bx, by)
+print(f'{rx:+.4f} {ry:+.4f} {bx:+.4f} {by:+.4f} {int(hr)} {int(hb)} {int(hr and hb)}')
+" "$XY")
+  set -- $RES
+  echo "trial $i: red=($1,$2)$([ "$5" = 1 ] && echo OK || echo NG)  blue=($3,$4)$([ "$6" = 1 ] && echo OK || echo NG)  => $([ "$7" = 1 ] && echo SUCCESS || echo FAIL)"
+  OK=$((OK + $7))
+done
+echo "成功 $OK/$N"

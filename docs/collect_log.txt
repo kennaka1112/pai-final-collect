@@ -1,0 +1,22 @@
+﻿[1/20] ep1  red=(+0.1261,-0.0133)OK  blue=(+0.1261,+0.0331)OK  => SUCCESS
+[2/20] ep2  red=(+0.1253,-0.0110)OK  blue=(+0.1215,+0.0420)OK  => SUCCESS
+[3/20] ep3  red=(+0.1240,-0.0202)OK  blue=(+0.1252,+0.0219)OK  => SUCCESS
+[4/20] ep4  red=(+0.1220,-0.0210)OK  blue=(+0.1281,+0.0244)OK  => SUCCESS
+[5/20] ep5  red=(+0.1248,-0.0175)OK  blue=(+0.1270,+0.0281)OK  => SUCCESS
+[6/20] ep6  red=(+0.1263,-0.0120)OK  blue=(+0.1255,+0.0341)OK  => SUCCESS
+[7/20] ep7  red=(+0.1292,-0.0137)OK  blue=(+0.1269,+0.0309)OK  => SUCCESS
+[8/20] ep8  red=(+0.1213,-0.0199)OK  blue=(+0.1278,+0.0268)OK  => SUCCESS
+[9/20] ep9  red=(+0.1246,-0.0175)OK  blue=(+0.1260,+0.0236)OK  => SUCCESS
+[10/20] ep10  red=(+0.1263,-0.0142)OK  blue=(+0.1269,+0.0276)OK  => SUCCESS
+[11/20] ep11  red=(+0.1252,-0.0143)OK  blue=(+0.1257,+0.0320)OK  => SUCCESS
+[12/20] ep12  red=(+0.1230,-0.0199)OK  blue=(+0.1276,+0.0270)OK  => SUCCESS
+[13/20] ep13  red=(+0.1262,-0.0131)OK  blue=(+0.1231,+0.0334)OK  => SUCCESS
+[14/20] ep14  red=(+0.1238,-0.0119)OK  blue=(+0.1247,+0.0364)OK  => SUCCESS
+[15/20] ep15  red=(+0.1239,-0.0165)OK  blue=(+0.1267,+0.0287)OK  => SUCCESS
+[16/20] ep16  red=(+0.1249,-0.0141)OK  blue=(+0.1234,+0.0335)OK  => SUCCESS
+[17/20] ep17  red=(+0.1247,-0.0179)OK  blue=(+0.1272,+0.0277)OK  => SUCCESS
+[18/20] ep18  red=(+0.1287,-0.0116)OK  blue=(+0.1233,+0.0346)OK  => SUCCESS
+[19/20] ep19  red=(+0.1276,-0.0185)OK  blue=(+0.1281,+0.0228)OK  => SUCCESS
+[20/20] ep20  red=(+0.1231,-0.0144)OK  blue=(+0.1274,+0.0321)OK  => SUCCESS
+
+成功 20/20 エピソード  保存先: /home/ubuntu/dataset/rosbags/collect_blocks

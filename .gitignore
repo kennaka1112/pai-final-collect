@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+video/
+checkpoints/
+dataset/
+*.mp4
+*.png
+!docs/*.png
+.venv-report/
+report/*.pdf
+report/*.pdf

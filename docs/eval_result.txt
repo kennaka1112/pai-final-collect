@@ -1,0 +1,11 @@
+﻿trial 1: red=(+0.1272,-0.0152)OK  blue=(+0.1268,+0.0295)OK  => SUCCESS
+trial 2: red=(+0.1245,-0.0167)OK  blue=(+0.1268,+0.0300)OK  => SUCCESS
+trial 3: red=(+0.1257,-0.0119)OK  blue=(+0.1257,+0.0343)OK  => SUCCESS
+trial 4: red=(+0.1227,-0.0167)OK  blue=(+0.1273,+0.0297)OK  => SUCCESS
+trial 5: red=(+0.1260,-0.0123)OK  blue=(+0.1255,+0.0340)OK  => SUCCESS
+trial 6: red=(+0.1257,-0.0144)OK  blue=(+0.1266,+0.0315)OK  => SUCCESS
+trial 7: red=(+0.1253,-0.0138)OK  blue=(+0.1258,+0.0327)OK  => SUCCESS
+trial 8: red=(+0.1242,-0.0168)OK  blue=(+0.1271,+0.0292)OK  => SUCCESS
+trial 9: red=(+0.1263,-0.0142)OK  blue=(+0.1258,+0.0315)OK  => SUCCESS
+trial 10: red=(+0.1224,-0.0155)OK  blue=(+0.1255,+0.0308)OK  => SUCCESS
+成功 10/10

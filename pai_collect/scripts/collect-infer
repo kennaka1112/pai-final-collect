@@ -1,0 +1,6 @@
+#!/bin/bash
+# 学習した方策で実行（先に collect_task.launch.py を起動しておく）
+source /opt/ros/humble/setup.bash
+source ~/airobot_ws/install/setup.bash
+MODEL="${1:-$HOME/checkpoints/train/crane_plus_collect_act}"
+cd ~/pai_training && exec pixi run infer --model-path "$MODEL"

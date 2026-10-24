@@ -1,0 +1,8 @@
+#!/bin/bash
+# ACT方策の学習（集めるタスク, GPU）
+set -e
+CFG=/workspace/pai_collect/configs
+cp "$CFG/collect_features.py" ~/pai_training/configs/collect_features.py
+cp "$CFG/collect_train.yaml" ~/pai_training/configs/train_config.yaml
+cd ~/pai_training
+exec pixi run train "$@"
